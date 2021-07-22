@@ -29,8 +29,8 @@ router
         //save the data to the database
         await saveData(cryptoData)
 
-        //send data to front end
-        res.send(cryptoData);
+        //return the data to the front end
+        res.render("api")
     })
 
     //route for all the other routes [404]
