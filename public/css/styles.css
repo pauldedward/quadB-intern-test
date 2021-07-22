@@ -24,3 +24,12 @@
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
 }
+
+.title-block {
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25em 1.875em 0;
+}
