@@ -1,0 +1,41 @@
+const express = require("express");
+const axios = require("axios");
+const path = require("path");
+
+
+const { convertData, saveData, getDataFromDB } = require(path.join(__dirname, "../controllers/index.js"));
+
+router = express.Router();
+
+router
+
+    //base route
+    .get("/", async (req, res) => { 
+        const crypto = await getDataFromDB();
+        return res.render("index",{crypto:crypto});
+    })
+
+
+    // route to get the API data [crypto info]
+    .get("/api", async (req, res) => {
+
+        // get the data from the API
+        const response = await axios.get("https://api.wazirx.com/api/v2/tickers")
+        const cryptoObject = response.data
+
+        // convert the data to a format that can be used by the front end
+        const cryptoData = convertData(cryptoObject)
+
+        //save the data to the database
+        await saveData(cryptoData)
+
+        //send data to front end
+        res.send(cryptoData);
+    })
+
+    //route for all the other routes [404]
+    .get("*" , (req, res) => {
+        res.send("404: Page Not Found");
+    })
+
+module.exports = router;
