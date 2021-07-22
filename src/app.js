@@ -3,10 +3,11 @@ const path = require("path");
 const ejs = require("ejs");
 const routes = require(path.join(__dirname, "/routes/index.js"));
 
+console.log(path.join(__dirname, "../public"))
 const app = express();  
-app.use("/", routes)
-app.use(express.static(path.join(__dirname, "../public")));
-app.set("view engine", "ejs")
+app.use("/", routes);
+app.set("view engine", "ejs");
+
 
 const PORT = process.env.PORT || 3000; 
 

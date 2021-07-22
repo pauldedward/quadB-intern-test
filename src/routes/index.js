@@ -1,12 +1,11 @@
 const express = require("express");
 const axios = require("axios");
 const path = require("path");
-
-
 const { convertData, saveData, getDataFromDB } = require(path.join(__dirname, "../controllers/index.js"));
 
-
 router = express.Router();
+router.use( "/", express.static(path.join(__dirname, "../../public")));
+
 
 router
 
@@ -14,6 +13,7 @@ router
     .get("/", async (req, res) => { 
         const crypto = await getDataFromDB();
         return res.render("index",{crypto:crypto});
+        // res.sendFile(path.join(__dirname , "../../public/index.html"));
     })
 
 
