@@ -10,7 +10,7 @@ app.set("view engine", "ejs")
 
 const PORT = process.env.PORT || 3000; 
 
-
+//listen to port
 app.listen(PORT, () => {
     console.log("Server started listening on port : ", PORT);
 });

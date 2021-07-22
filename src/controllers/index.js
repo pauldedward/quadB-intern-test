@@ -1,9 +1,12 @@
 const path = require("path");
 const Crypto = require(path.join(__dirname, "../models/mongoose.js"))
 
+
 //converts data into Array
 function convertData(data) {
+
     const convertedData = []
+
     for (let [key, value] of Object.entries(data)) {
         const name = value.name
         const last = value.last
@@ -28,6 +31,7 @@ function convertData(data) {
     return convertedData.slice(0, 10)
 }
 
+
 //saves crypto info to DB
 async function saveData(data) {
 
@@ -51,6 +55,7 @@ async function saveData(data) {
 
     return
 }
+
 
 //query all documents from DB
 async function getDataFromDB() {
