@@ -1,0 +1,26 @@
+
+:root {
+    /* colors for dark theme */
+    --bg-color-dark-primary: #191D28;
+    --bg-color-dark-secondary: #2E3241;
+    --text-color-dark-telegram: #3DC6C1;
+    --text-color-dark-primary: #fff;
+    --text-color-dark-dimmed: #808388;
+    --text-color-dark-secondary: #5DC7C2;
+    --text-color-service-worker: #17A2B8;
+
+    /* colors for light theme */
+    --bg-color-light-primary: #fff;
+    --text-color-light-primary: #191D28;
+    --bg-color-light-secondary: #F8F9FA;
+    --text-color-light-secondary: #BABBCB;
+    --text-color-light-title:#0C0F48;
+
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
