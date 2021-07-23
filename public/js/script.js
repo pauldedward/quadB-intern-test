@@ -1,14 +1,16 @@
-console.log("hi");
 
+
+
+//timer element 
 const circle=document.querySelector('circle');
-
-let maxOffset = 2*Math.PI*circle.r.baseVal.value;
+const maxOffset = 2*Math.PI*circle.r.baseVal.value;
+let offset = 0;
 
 circle.setAttribute("stroke-dasharray", maxOffset);
-offset = 0;
+//changing state of timer
 const interval = setInterval(() => {
         circle.setAttribute("stroke-dashoffset", offset);
-        if(offset < -maxOffset) {
+        if(offset <= -maxOffset) {
             offset = 0;
         }
         else {

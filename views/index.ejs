@@ -7,59 +7,108 @@
     <noscript>You need to enable JavaScript to run this index.</noscript>
     <header class="title-block">
         <div class="title-card-block">
-            <img style="width:200px;" src="/images/HODLINFO.png" alt="holdinfo picture">
+            <a href="" target="_blank"><img class="title-card-image" src="/images/HODLINFO.png" alt="holdinfo picture">
+            </a>
             <p>Powered By <a href="https://www.finstreet.in/courses" target="_blank">Finstreet</a></p>
         </div>
         <div class="title-button-block">
-            <button>INR</button>
-            <button>BTC</button>
-            <button> <a href="">GET</a> </button>
+            <select class="title-button" value="inr" id="currency">
+                <option value="inr">INR</option>
+            </select>
+            <select class="title-button" id="coins">
+                <option value="btc">BTC</option>
+                <option value="eth">ETH</option>
+                <option value="usdt">USDT</option>
+                <option value="xrp">XRP</option>
+            </select>
+            <button class="title-button"> <a href="https://wazirx.com/invite/sp7pvbt6?utm_source=finstreet&utm_medium=affiliate&utm_campaign=regnow-btn" target="_blank">BUY BTC</a> </button>
         </div>
         <div class="connect-block">
-            <svg viewbox= "0 0 100 100">
-                <circle fill="transparent" cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="red" stroke-dasharray="360"  stroke-dashoffset="-10" transform="rotate(-90,50,50)"></circle> />
-              </svg>
-            <button>CONNECT</button>
-            <span>Theme</span>
+            <div class="svg-block">
+                <svg viewbox= "0 0 100 100">
+                    <circle fill="transparent" cx="50" cy="50" r="40" stroke="#17A2B8" stroke-width="6" fill="red" transform="rotate(-90,50,50)"></circle>
+                </svg>
+                <span class="timer-text">1</span>
+            </div>
+            <a class="telegram-button"> 
+                <div>
+                    <img src="/images/telegram.png" alt=""> 
+                    <span>Connect Telegram</span>
+                </div>
+            </a>
+            <div class="theme-block">
+                <div class="theme" ></div>
+            </div>
         </div>
     </header>   
-    <div .class="info-block">
+    <section .class="info-block">
         <div class="details-block">
-            <div>mins</div>
-            <div>hours</div>
-            <div>Trade</div>
-            <div>day</div>
-            <div>week</div>
-        </div>
-        <img style="width:80%" src="/images/cryptonews.png" alt="">
-    </div>
-    <main class="main-block">
-        <ul>
-            <li>Sameple</li>
-            <li>Sameple</li>
-            <li>Sameple</li>
-            <li>Sameple</li>
-            <li>Sameple</li>
-            <li>Sameple</li>
-        </ul>
-    </main>
-    <img style="width:90%" src="/images/BannerFTXNews.png" alt="">
-    <footer class="footer-block">
-        <div>
-            <div>Copyright © 2019</div>
-            <div>HodlInfo.com</div>
-            <div>Developed By <a rel="nofollow" href="https://www.quadbtech.com" target="_blank" style="color: rgb(61, 198, 193);"> QuadBTech</a></div>
-            <div  style="margin-left: auto;"><a href="mailto:support@hodlinfo.com" class="footer-text-link">Support</a>
+            <div class="details">
+                <div class="percentage">17.5%</div>
+                <div class="info">5 mins</div>
             </div>
+            <div class="details">
+                <div class="percentage">2.5%</div>
+                <div class="info">3 hours</div>
+            </div>
+            <div class="details">
+                <div class="best-price">Best Price to Trade</div>
+                <div class="best-price-amount">₹24,71,102</div>
+                <div class="best-price-info">Average BTC/INR net price including commission</div>
+            </div>
+            <div class="details">
+                <div class="percentage">12.6%</div>
+                <div class="info">1 Day</div>
+            </div>
+            <div class="details">
+                <div class="percentage">20%</div>
+                <div class="info">7 Days</div>
+            </div>
+        </div>
+        <img  class="news-image" src="/images/cryptonews.png" alt="">
+    </section>
+    <main class="main-block">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Last</th>
+                    <th>Buy/Sell price</th>
+                    <th>Volume</th>
+                    <th>Base unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < crypto.length; i++) { %>
+                    <tr class="table-contents">
+                        <td><%=i + 1%></td>
+                        <td><%=crypto[i].name %></td>
+                        <td>₹<%=Math.round(crypto[i].last) %></td>
+                        <td>₹<%=Math.round(crypto[i].buy) %> / ₹<%=Math.round(crypto[i].sell) %></td>
+                        <td><%=crypto[i].volume %></td>
+                        <td><%=crypto[i].base_unit %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </main>
+    <img class="news-image" src="/images/BannerFTXNews.png" alt="">
+    <hr>
+    <footer class="footer-block">
+        <div class="footer-elements">Copyright © 2019</div>
+        <div class="footer-elements">HodlInfo.com</div>
+        <div class="footer-elements">Developed By 
+            <a href="https://www.quadbtech.com" target="_blank">QuadBTech</a>
+        </div>
+        <div class="support" >
+            <a href="mailto:support@hodlinfo.com" class="footer-text-link">Support</a>
         </div>
     </footer>
     <div class="service-worker-block">
-        <button>Add to homepage</button>
+        <button>Add Hodlinfo to homepage</button>
     </div>
     <script src="/js/script.js"></script>
 </body>
 </html>
 
-<!-- <% crypto.forEach(function(coin){ %>
-    <li><%- coin.name %></li>
-<% }); %> -->
