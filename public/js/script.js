@@ -23,6 +23,9 @@ const interval = setInterval(() => {
         }
         if (counter % 4 == 0 ) {
             timeLeft--;
+            if (timeLeft <= 0) {
+                timeLeft = 0;
+            }
             timerText.innerHTML = timeLeft;
             counter = 0;
         }
