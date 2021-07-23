@@ -125,7 +125,7 @@ svg {
 .timer-text {
     position : absolute;
     top: 20%;
-    left: 40%;
+    left: 35%;
     color: var(--text-color-dark-primary);
 }
 
@@ -167,6 +167,7 @@ svg {
     background-color: var(--bg-color-dark-secondary);
     border-radius: 2em;
     cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
 .theme {
@@ -175,8 +176,9 @@ svg {
     height: 25px;
     width: 25px;
     position: absolute;
-    top: 7.5%;
+    top: 8%;
     left: 7.5%;
+    transition: all .2s ease-in-out;
 }
 /* details block */
 
@@ -264,6 +266,7 @@ hr {
     align-items: center;
 }
 
+/* add to homepage styling */
 .service-worker-block button {
     font-size: 1.125rem;
     font-family: sans-serif;
@@ -272,8 +275,14 @@ hr {
     width: 25%;
     height: 80%;
     border: 1px solid var(--text-color-service-worker);
-    border-radius: .125em;
+    border-radius: .25em;
     color: var(--text-color-service-worker);
+    transition: all .125s ease-in-out;
+}
+
+.service-worker-block button:hover {
+    color: var(--text-color-dark-primary);
+    background-color: var(--text-color-service-worker);
 }
 
 /* styling table */
@@ -320,8 +329,41 @@ td:last-child {
 }
 
 td {
-    
     padding: .25em 0;
 }
 
 
+/* light theme classes */
+
+body.light-theme{
+    background-color: var(--bg-color-light-primary);
+}
+.title-button.light-theme, button.light-theme{
+    background-color: var(--bg-color-light-secondary);
+    color: var(--text-color-light-primary);
+}
+
+button>a.light-theme {
+    color: var(--text-color-light-primary);
+}
+
+tbody.light-theme{
+    background-color: var(--bg-color-light-secondary);
+    color: var(--text-color-light-primary);
+}
+
+#bestPrice.light-theme {
+    color: var(--text-color-light-title);
+}
+
+#timerText.light-theme {
+    color: var(--text-color-light-primary);
+}
+
+#themeSelect.theme-block.light-theme {
+    background-color: var(--bg-color-light-secondary);
+}
+
+#themeSlide.light-theme {
+    left:50%;
+}

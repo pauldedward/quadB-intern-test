@@ -12,23 +12,23 @@
             <p>Powered By <a href="https://www.finstreet.in/courses" target="_blank">Finstreet</a></p>
         </div>
         <div class="title-button-block">
-            <select class="title-button" value="inr" id="currency">
+            <select class="title-button themeBtn" value="inr" id="currency">
                 <option value="inr">INR</option>
             </select>
-            <select class="title-button" id="coins">
+            <select class="title-button themeBtn" id="coins">
                 <option value="btc">BTC</option>
                 <option value="eth">ETH</option>
                 <option value="usdt">USDT</option>
                 <option value="xrp">XRP</option>
             </select>
-            <button class="title-button"> <a href="https://wazirx.com/invite/sp7pvbt6?utm_source=finstreet&utm_medium=affiliate&utm_campaign=regnow-btn" target="_blank">BUY BTC</a> </button>
+            <button class="title-button themeBtn"> <a class="themeBtn" href="https://wazirx.com/invite/sp7pvbt6?utm_source=finstreet&utm_medium=affiliate&utm_campaign=regnow-btn" target="_blank">BUY BTC</a> </button>
         </div>
         <div class="connect-block">
             <div class="svg-block">
                 <svg viewbox= "0 0 100 100">
                     <circle fill="transparent" cx="50" cy="50" r="40" stroke="#17A2B8" stroke-width="6" fill="red" transform="rotate(-90,50,50)"></circle>
                 </svg>
-                <span class="timer-text">1</span>
+                <span id="timerText" class="timer-text">1</span>
             </div>
             <a class="telegram-button"> 
                 <div>
@@ -36,8 +36,8 @@
                     <span>Connect Telegram</span>
                 </div>
             </a>
-            <div class="theme-block">
-                <div class="theme" ></div>
+            <div id="themeSelect" class="theme-block">
+                <div id="themeSlide" class="theme" ></div>
             </div>
         </div>
     </header>   
@@ -53,7 +53,7 @@
             </div>
             <div class="details">
                 <div class="best-price">Best Price to Trade</div>
-                <div class="best-price-amount">₹24,71,102</div>
+                <div id="bestPrice" class="best-price-amount">₹24,71,102</div>
                 <div class="best-price-info">Average BTC/INR net price including commission</div>
             </div>
             <div class="details">
@@ -70,7 +70,7 @@
     <main class="main-block">
         <table>
             <thead>
-                <tr>
+                <tr class="themeTable">
                     <th>#</th>
                     <th>Name</th>
                     <th>Last</th>
@@ -79,7 +79,7 @@
                     <th>Base unit</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
                 <% for(let i = 0; i < crypto.length; i++) { %>
                     <tr class="table-contents">
                         <td><%=i + 1%></td>
